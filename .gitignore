@@ -3,3 +3,4 @@ train/
 board/
 saved_model/
 data/
+*.npy
