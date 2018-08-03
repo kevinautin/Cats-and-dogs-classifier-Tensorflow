@@ -64,10 +64,17 @@ def plot_example_errors(images, labels, preds):
     plot_9_images(wrong_images[0:9], wrong_labels[0:9], wrong_preds[0:9])
     
 # Return one batch out of the dataset
-def fetch_batch(images, labels, batch_size, batch_index):
-    indices = slice(batch_index*batch_size, batch_index*batch_size + batch_size)
-    x_batch = images[indices]
-    y_batch = labels[indices]
+def fetch_batch(images, labels, batch_size):
+    num_images = len(images)
+
+    # Create a random index.
+    idx = np.random.choice(num_images, size=batch_size, replace=False)
+
+    # Use the random index to select random x and y-values.
+    # We use the transfer-values instead of images as x-values.
+    x_batch = images[idx]
+    y_batch = labels[idx]
+
     return x_batch, y_batch
 
 
