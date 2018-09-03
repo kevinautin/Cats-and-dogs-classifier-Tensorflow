@@ -1,3 +1,7 @@
+# Functions to simplify the creating of neural network layers in tensorflow. 
+# Functions from the tutorial:
+# https://github.com/Hvass-Labs/TensorFlow-Tutorials
+
 import tensorflow as tf
 
 #creating parameters (weights and biases)
